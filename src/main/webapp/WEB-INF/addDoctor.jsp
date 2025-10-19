@@ -16,7 +16,6 @@
         <jsp:include page="./layout/header.jsp" />
 
         <div class="p-6">
-            <!-- Page Header -->
             <div class="mb-6">
                 <div class="flex items-center justify-between">
                     <div>

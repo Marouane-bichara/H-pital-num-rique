@@ -34,6 +34,7 @@ public class AddDoctorController extends HttpServlet {
 
         String nom = req.getParameter("nom");
         String prenom = req.getParameter("prenom");
+
         String email = req.getParameter("email");
         String motDePasse = req.getParameter("motDePasse");
         String specialite = req.getParameter("specialite");
@@ -50,8 +51,8 @@ public class AddDoctorController extends HttpServlet {
                 departementId
         );
 
-        // Set success message in session
         HttpSession session = req.getSession();
+
         session.setAttribute("successMessage", "Doctor " + docteur.getPrenom() + " " + docteur.getNom() + " has been successfully registered!");
 
         req.getRequestDispatcher("/WEB-INF/addDoctor.jsp").forward(req, resp);
