@@ -12,6 +12,9 @@
         <class>com.example.digitalhospital.entities.Departement</class>
         <class>com.example.digitalhospital.entities.Salle</class>
         <class>com.example.digitalhospital.entities.Consultation</class>
+        <class>com.example.digitalhospital.entities.Admin</class>
+
+
         <properties>
             <!-- mysql Database -->
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
