@@ -4,6 +4,7 @@ import com.example.digitalhospital.entities.Personne;
 import com.example.digitalhospital.repository.IAuthRepository;
 import com.example.digitalhospital.util.JPAUtil;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.TypedQuery;
 
 public class AuthRepository implements IAuthRepository {
@@ -19,10 +20,15 @@ public class AuthRepository implements IAuthRepository {
             query.setParameter("email" , email);
 
             return query.getSingleResult();
+        }catch (NoResultException e) {
+            return null;
         } catch (Exception e) {
             throw new RuntimeException("Error while getting the informations" , e);
         }finally {
             em.close();
         }
     }
+
+
+
 }

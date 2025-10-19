@@ -5,6 +5,7 @@ import com.example.digitalhospital.repository.IDepartementRepository;
 import com.example.digitalhospital.util.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.TypedQuery;
 
 import java.util.List;
@@ -47,6 +48,8 @@ public class DepartmentRepositoryImpl implements IDepartementRepository {
             {
                 return departement;
             }
+            return null;
+        }catch (NoResultException e) {
             return null;
         }catch (RuntimeException e)
         {

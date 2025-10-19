@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "patient")
 public class Patient extends Personne{
     private Double poids;
     private Double taille;

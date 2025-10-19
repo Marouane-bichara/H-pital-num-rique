@@ -5,6 +5,7 @@ import com.example.digitalhospital.repository.IDocteurRepository;
 import com.example.digitalhospital.util.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.TypedQuery;
 
 import java.util.List;
@@ -147,6 +148,8 @@ public class DocteurRepositoryImpl implements IDocteurRepository {
             query.setParameter("email" , email);
 
             return query.getSingleResult();
+        }catch (NoResultException e) {
+            return null;
         } catch (Exception e) {
             throw new RuntimeException("Error while getting an docteur "+e);
         }finally {
